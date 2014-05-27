@@ -3,7 +3,6 @@
 
   // The noopHandler stops propagation and default
   var _noopHandler = function noopEventHandler(evt) {
-    console.log('noopHandler');
     // var evt = (e.originalEvent || e);
     evt.stopPropagation();
     evt.preventDefault();
@@ -17,7 +16,9 @@
     var resultDict = {};
 
     // Iterate over the event bindings
-    _.each(dict, function(f, name) {
+    for (var name in dict) {
+      // Get f
+      var f = dict[name];
 
       // XXX: we dont currently support 'dropped #foo, dropped #bar'
       if (/^dropped/.test(name)) {
@@ -43,7 +44,7 @@
         resultDict[name] = f;
       }
 
-    });
+    }
 
     // Hand over to super
     return _super.apply(self, [resultDict]);
