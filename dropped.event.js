@@ -17,13 +17,12 @@
 
     // Iterate over the event bindings
     for (var name in dict) {
-      // Get f
-      var f = dict[name];
 
       // XXX: we dont currently support 'dropped #foo, dropped #bar'
       if (/^dropped/.test(name)) {
         // Get the selector part
         var selector = name.split(' ')[1];
+        var n = name;
 
         if (selector) {
 
@@ -36,12 +35,12 @@
             _noopHandler(evt);
 
             // Run user callback
-            f.apply(this, [evt, tmp]);
+            dict[n].apply(this, [evt, tmp]);
           };
         }
       } else {
         // Pass on original
-        resultDict[name] = f;
+        resultDict[name] = dict[name];
       }
 
     }
