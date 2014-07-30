@@ -1,5 +1,14 @@
+  // backwards compatibility
+  var ref;
+  if (typeof Blaze !== "undefined" && typeof Blaze.View !== "undefined") {
+    // Meteor 0.8.3+
+    ref = Template.prototype;
+  } else {
+    ref = UI.Component;
+  }
+
   // Save super before overwriting
-  var _super = UI.Component.events;
+  var _super = ref.events;
 
   // The noopHandler stops propagation and default
   var _noopHandler = function noopEventHandler(evt) {
@@ -9,7 +18,7 @@
   }
 
   // Overwrite name it for debugging
-  UI.Component.events = function uiDroppedEvents_Overwrite(dict) {
+  ref.events = function uiDroppedEvents_Overwrite(dict) {
     var self = this;
 
     // Carry

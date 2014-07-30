@@ -3,6 +3,6 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use(['ui'], 'client');
+  api.use(['ui', 'templating'], 'client');
   api.add_files(['dropped.event.js'], 'client');
 });
