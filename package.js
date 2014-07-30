@@ -1,5 +1,5 @@
 Package.describe({
-  version: '0.0.0',
+  version: '0.0.6',
   summary: "Add dropped event to Meteor UI Templates"
 });
 
