@@ -1,3 +1,12 @@
+Installation
+================
+
+```cli
+$ cd <app dir>
+$ meteor add raix:ui-dropped-event
+```
+
+
 ui-dropped-event
 ================
 
