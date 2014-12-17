@@ -1,7 +1,7 @@
 Package.describe({
   git: 'https://github.com/CollectionFS/Meteor-ui-dropped-event.git',
   name: 'cfs:dropped-event',
-  version: '0.0.9',
+  version: '0.0.10',
   summary: "Add dropped event to Meteor UI Templates"
 });
 
